@@ -79,25 +79,22 @@ public class ActivityNombre extends AppCompatActivity implements View.OnClickLis
 
 
 
-        sharedPreferences.getString("color","f");
-
-        Log.e("TAG", sharedPreferences.getString("color","f"));
+        String color =sharedPreferences.getString("color","f");
 
 
-
-        if(sharedPreferences.getString("color","f").contentEquals("BLUE")){
+        if(color.contentEquals("BLUE")){
 
             constraintLayout.setBackgroundColor(Color.BLUE);
         }
 
-        if(sharedPreferences.getString("color","f").contentEquals("WHITE")){
+        if(color.contentEquals("WHITE")){
 
             constraintLayout.setBackgroundColor(Color.WHITE);
         }
 
-        if(sharedPreferences.getString("color","f").contentEquals("BLACK")){
+        if(color.contentEquals("RED")){
 
-            constraintLayout.setBackgroundColor(Color.BLACK);
+            constraintLayout.setBackgroundColor(Color.RED);
         }
     }
 

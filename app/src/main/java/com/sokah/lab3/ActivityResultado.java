@@ -44,19 +44,21 @@ public class ActivityResultado extends AppCompatActivity implements View.OnClick
 
         Log.e("TAG", "cambio fondo" );
 
-        if(sharedPreferences.getString("color","f").contentEquals("BLUE")){
+        String color =sharedPreferences.getString("color","f");
+
+        if(color.contentEquals("BLUE")){
 
             cl.setBackgroundColor(Color.BLUE);
         }
 
-        if(sharedPreferences.getString("color","f").contentEquals("WHITE")){
+        if(color.contentEquals("WHITE")){
 
             cl.setBackgroundColor(Color.WHITE);
         }
 
-        if(sharedPreferences.getString("color","f").contentEquals("BLACK")){
+        if(color.contentEquals("RED")){
 
-            cl.setBackgroundColor(Color.BLACK);
+            cl.setBackgroundColor(Color.RED);
         }
 
     }

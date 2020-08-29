@@ -56,7 +56,6 @@ public class ActivityNota extends AppCompatActivity implements View.OnClickListe
         npparcial2= npparcial2*0.25;
 
         double nota;
-        //nota = ((nparcial*15)/100)+((nparcial2*15)/100)+((nquices*15)/100)+((nejercicios*5)/100)+((npparcial*25/100)+((nparcial2*25)/100));
         nota = nparcial + nparcial2+ nejercicios + npparcial + npparcial2 + nquices;
 
         Log.e("xd", ""+nota );
@@ -75,25 +74,29 @@ public class ActivityNota extends AppCompatActivity implements View.OnClickListe
 
         Log.e("TAG", "cambio fondo" );
 
-        if(sharedPreferences.getString("color","f").contentEquals("BLUE")){
+        String color=sharedPreferences.getString("color","f");
+
+        if(color.contentEquals("BLUE")){
 
             constraintLayout.setBackgroundColor(Color.BLUE);
         }
 
-        if(sharedPreferences.getString("color","f").contentEquals("WHITE")){
+        if(color.contentEquals("WHITE")){
 
             constraintLayout.setBackgroundColor(Color.WHITE);
         }
 
-        if(sharedPreferences.getString("color","f").contentEquals("BLACK")){
+        if(color.contentEquals("RED")){
 
-            constraintLayout.setBackgroundColor(Color.BLACK);
+            constraintLayout.setBackgroundColor(Color.RED);
         }
 
     }
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+
+        CambiarFondo();
 
     }
 }

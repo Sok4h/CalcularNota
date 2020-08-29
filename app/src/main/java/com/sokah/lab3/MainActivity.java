@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         botonAzul= findViewById(R.id.buttonAzul);
         buttonBlanco= findViewById(R.id.buttonBlanco);
-        buttonNegro= findViewById(R.id.buttonNegro);
+        buttonNegro= findViewById(R.id.buttonRojo);
         constraintLayout= findViewById(R.id.fondoColor);
 
         buttonNegro.setOnClickListener(this);
@@ -57,9 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
 
-            case R.id.buttonNegro:
+            case R.id.buttonRojo:
 
-                sharedPreferences.edit().putString("color","BLACK").apply();
+                sharedPreferences.edit().putString("color","RED").apply();
 
                 finish();
 
@@ -82,19 +81,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Log.e("TAG", "cambio fondo" );
 
-        if(sharedPreferences.getString("color","f").contentEquals("BLUE")){
+        String color = sharedPreferences.getString("color","f");
+
+        if(color.contentEquals("BLUE")){
 
             constraintLayout.setBackgroundColor(Color.BLUE);
         }
 
-        if(sharedPreferences.getString("color","f").contentEquals("WHITE")){
+        if(color.contentEquals("WHITE")){
 
             constraintLayout.setBackgroundColor(Color.WHITE);
         }
 
-        if(sharedPreferences.getString("color","f").contentEquals("BLACK")){
+        if(color.contentEquals("RED")){
 
-            constraintLayout.setBackgroundColor(Color.BLACK);
+            constraintLayout.setBackgroundColor(Color.RED);
         }
 
     }
